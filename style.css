@@ -22,7 +22,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-
 }
 
 h1 {
@@ -87,13 +86,14 @@ footer {
 @media (min-width: 768px) {
 
     .slot.vazio {
-        height: 200px;
+        height: 180px;
     }
 
     .grid-imagens {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        justify-content: center;
-        gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));        max-width: 1200px;
+        margin: 0 auto;
+        gap: 15px;
     }
 
     footer {
@@ -109,8 +109,9 @@ footer {
     }
 
     .grid-imagens {
-        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));        max-width: 1200px;
+        margin: 0 auto;
         gap: 20px;
     }
 

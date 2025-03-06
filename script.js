@@ -17,6 +17,10 @@ inputImagem.addEventListener("change", (Event) => {
     const arquivo = Event.target.files[0];
 
     if (arquivo) {
+        const tipoArquivo = arquivo.type;
+        const tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif']
+
+        if (tiposPermitidos.includes(tipoArquivo)) { 
         const img = document.createElement('img');
         img.src = URL.createObjectURL(arquivo);
         img.alt = 'Imagem Carregada';
@@ -36,6 +40,10 @@ inputImagem.addEventListener("change", (Event) => {
             console.log('Imagem adicionada ao slot', slotVazio.id);
         } else {
             console.log('Slot não encontrado!')
+            }
+        } else {
+            alert('Por favor, insira somente arquivos de imagem (JPG,PNG, GIF).');
+            console.log('O arquivo não é uma imagem válida:', arquivo.name);
         }
     }
 })
