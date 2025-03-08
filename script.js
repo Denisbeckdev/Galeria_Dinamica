@@ -81,6 +81,9 @@ popupRemover.addEventListener("click", () => {
     if (slot) {
         slot.innerHTML = '';  
         slot.classList.add('vazio'); 
+        slot.innerHTML = `
+        <span>+</span>
+        <span>Adicionar Imagem</span>`;
 
         console.log(`Imagem removida do slot ${slotIdParaRemover}`);
 
