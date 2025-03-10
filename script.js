@@ -45,7 +45,7 @@ inputImagem.addEventListener("change", (event) => {
                     let storedImages = JSON.parse(localStorage.getItem('imagens')) || [];
                     storedImages = storedImages.filter(image => image.slotId !== slotId);
 
-                    slotSelecionado.innerHTML = ''; 
+                    slotSelecionado.innerHTML = '';
                     slotSelecionado.appendChild(img);
                     slotSelecionado.classList.remove('vazio');
 
@@ -67,7 +67,7 @@ inputImagem.addEventListener("change", (event) => {
 function abrirPopup(src, slotIdSelecionado) {
     popupImagem.src = src;
     popup.style.display = "flex";
-    popup.dataset.slotId = slotIdSelecionado; 
+    popup.dataset.slotId = slotIdSelecionado;
 }
 
 popupFechar.addEventListener("click", () => {
@@ -79,8 +79,8 @@ popupRemover.addEventListener("click", () => {
     const slot = document.getElementById(slotIdParaRemover);
 
     if (slot) {
-        slot.innerHTML = '';  
-        slot.classList.add('vazio'); 
+        slot.innerHTML = '';
+        slot.classList.add('vazio');
         slot.innerHTML = `
         <span>+</span>
         <span>Adicionar Imagem</span>`;
@@ -92,7 +92,7 @@ popupRemover.addEventListener("click", () => {
         localStorage.setItem('imagens', JSON.stringify(storedImages));
     }
 
-    popup.style.display = "none"; 
+    popup.style.display = "none";
 });
 
 window.addEventListener("load", () => {
@@ -105,8 +105,8 @@ window.addEventListener("load", () => {
             img.src = image.imgSrc;
             img.alt = 'Imagem Carregada';
 
-            slot.innerHTML = ''; 
-            slot.appendChild(img);  
+            slot.innerHTML = '';
+            slot.appendChild(img);
             slot.classList.remove('vazio');
         }
     });
